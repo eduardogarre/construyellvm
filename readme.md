@@ -1,6 +1,6 @@
 # Construye e instala LLVM
 
-Guión para construir e instalar LLVM.
+Guión para construir e instalar LLVM en Windows.
 
 ## Repositorio
 
