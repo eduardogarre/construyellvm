@@ -1,5 +1,5 @@
 #rm llvm-src -Force -Recurse -ErrorAction SilentlyContinue
-#rm obra -Force -Recurse -ErrorAction SilentlyContinue
+rm obra -Force -Recurse -ErrorAction SilentlyContinue
 
 git clone --config core.autocrlf=false https://github.com/llvm/llvm-project.git llvm-src
 
