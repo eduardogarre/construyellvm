@@ -1,10 +1,12 @@
+# Cuenta el tiempo empleado
+$crono = [system.diagnostics.stopwatch]::startNew()
 #rm llvm-src -Force -Recurse -ErrorAction SilentlyContinue
 rm obra -Force -Recurse -ErrorAction SilentlyContinue
 
 git clone --config core.autocrlf=false https://github.com/llvm/llvm-project.git llvm-src
 
 cd .\llvm-src
-git checkout llvmorg-14.0.0
+git checkout llvmorg-13.0.0
 cd ..
 
 mkdir obra
@@ -15,3 +17,11 @@ cmake --build . --parallel
 cmake --build . --target install
 
 cd ..
+
+$crono.Stop()
+
+$tConstrucción = $crono.Elapsed.TotalSeconds
+
+echo [33m
+echo "Tiempo empleado en construir LLVM: $tConstrucción segundos"
+echo [0m
